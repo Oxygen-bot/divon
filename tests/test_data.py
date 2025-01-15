@@ -4,7 +4,7 @@ from src.data.feature_engineering import FeatureEngineering
 
 def test_preprocessor():
     df = pd.DataFrame({'close': [1,2,3]})
-    processor = DataPreprocessor(df)
+    processor = DataPreprocessor(df) 
     processed = processor.process()
     assert not processed.empty
 
