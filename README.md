@@ -3,6 +3,6 @@ PumTrash is anframework for analyzing and trading cryptocurrency markets generat
 
 ---
 
-## Divon is powered by `divon` Solana token with contract address
+## Divon is powered by `divon` Solana token with contract address :
 
 ### CA: `ti1AicEoKpi5e8Jdi2EV43piqAzzFwvH8AC3X9LiuKt`
