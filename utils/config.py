@@ -8,3 +8,4 @@ class Config:
         self.input_size = 6
         self.hidden_size = 64
         self.num_layers = 2
+        
