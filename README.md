@@ -79,15 +79,95 @@ This repository provides a complete pipeline for building, training, testing, an
    ```bash
    git clone https://github.com/Oxygen-bot/divon.git
    cd divon
-
+   ```
+   
 2. **Create and Activate a Virtual Environment**
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
    
 3. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
+   ```
+
+  ```bash
+    import math
+
+class TradingEngine:
+    def __init__(self, initial_balance, leverage):
+        self.balance = initial_balance
+        self.leverage = leverage
+        self.positions = []  # List to track open positions
+        self.margin_used = 0
+        self.pnl = 0
+
+    def calculate_required_margin(self, position_size, price):
+        return position_size / self.leverage
+
+    def calculate_unrealized_pnl(self, position):
+        if position['type'] == 'long':
+            return (position['current_price'] - position['entry_price']) * position['size']
+        elif position['type'] == 'short':
+            return (position['entry_price'] - position['current_price']) * position['size']
+
+    def open_position(self, position_type, size, entry_price):
+        margin_required = self.calculate_required_margin(size, entry_price)
+
+        if margin_required > self.balance - self.margin_used:
+            raise ValueError("Not enough margin available to open this position.")
+
+        position = {
+            'type': position_type,
+            'size': size,
+            'entry_price': entry_price,
+            'current_price': entry_price,
+        }
+
+        self.positions.append(position)
+        self.margin_used += margin_required
+        print(f"Opened {position_type} position of size {size} at price {entry_price}.")
+
+    def update_price(self, position_index, current_price):
+        position = self.positions[position_index]
+        position['current_price'] = current_price
+
+        unrealized_pnl = self.calculate_unrealized_pnl(position)
+        self.pnl = sum(self.calculate_unrealized_pnl(pos) for pos in self.positions)
+
+        print(f"Position updated. Current Price: {current_price}, Unrealized PnL: {unrealized_pnl}")
+
+    def close_position(self, position_index):
+        position = self.positions.pop(position_index)
+        pnl = self.calculate_unrealized_pnl(position)
+        self.margin_used -= self.calculate_required_margin(position['size'], position['entry_price'])
+        self.balance += pnl
+
+        print(f"Closed position with PnL: {pnl}. Current Balance: {self.balance}")
+
+    def get_account_summary(self):
+        print("--- Account Summary ---")
+        print(f"Balance: {self.balance}")
+        print(f"Margin Used: {self.margin_used}")
+        print(f"Unrealized PnL: {self.pnl}")
+        print(f"Open Positions: {len(self.positions)}")
+        for i, position in enumerate(self.positions):
+            print(f"  {i + 1}. Type: {position['type']}, Size: {position['size']}, Entry Price: {position['entry_price']}, Current Price: {position['current_price']}")
+
+# Example Usage
+if __name__ == "__main__":
+    engine = TradingEngine(initial_balance=10000, leverage=10)
+    engine.open_position(position_type='long', size=1000, entry_price=50)
+    engine.update_price(position_index=0, current_price=55)
+    engine.get_account_summary()
+    engine.close_position(position_index=0)
+    engine.get_account_summary()
+
+   ```
+
+
+
 
 ### Data Ingestion
 By default, the system fetches data from Binance (BTC/USDT, 1-hour intervals). Modify `get_crypto_data` in `src/main.py` to switch to alternative markets or timeframes.
