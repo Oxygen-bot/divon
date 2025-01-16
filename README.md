@@ -95,7 +95,7 @@ This repository provides a complete pipeline for building, training, testing, an
    
     (Mandatory for any trading program)
    - [Node-RED](https://nodered.org/)
-    - [Example Binance]([https://nodered.org/](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072))
+   - [Example-Binance]([https://nodered.org/](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072)
       
    ```bash
     """key.env"""
