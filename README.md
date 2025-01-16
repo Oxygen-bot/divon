@@ -89,7 +89,6 @@ This repository provides a complete pipeline for building, training, testing, an
    ```bash
    pip install -r requirements.txt
 
-## Usage Instructions
 ### Data Ingestion
 By default, the system fetches data from Binance (BTC/USDT, 1-hour intervals). Modify `get_crypto_data` in `src/main.py` to switch to alternative markets or timeframes.
 
