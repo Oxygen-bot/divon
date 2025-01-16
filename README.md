@@ -5,9 +5,9 @@ Divon is an framework for analyzing and trading cryptocurrency markets generatin
 
 ## Divon is powered by `divon` Solana token with contract address :
 
-#### CA:  `ti1AicEoKpi5e8Jdi2EV43piqAzzFwvH8AC3X9LiuKt`
+#### CA:  `In_a_few_minutes`
 
-#### Dev: `ti1AicEoKpi5e8Jdi2EV43piqAzzFwvH8AC3X9LiuKt`
+#### Dev: `6u9zAaSnGgTWRXZWAE1hDL2VUidyPrCzs2J3xeHpUjiZ`
 
  -Website: [divon.cloud](https://divon.cloud/) 
  
