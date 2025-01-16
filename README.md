@@ -75,19 +75,22 @@ This repository provides a complete pipeline for building, training, testing, an
 
 ## **Installation**
 
-1. **Clone the Repository**  
+1. **Dependency**
+   Installation of the necessary libraries:
+     - ccxt: A popular library for accessing multiple exchanges.
+     - pandas: To manipulate data.
+     - numpy: For mathematical calculations.
+     - matplotlib or others to visualize the data.
+   ```bash
+   pip install ccxt pandas numpy
+    ```
+
+3. **Clone the Repository**  
    ```bash
    git clone https://github.com/Oxygen-bot/divon.git
-   cd divon
    ```
-   
-2. **Create and Activate a Virtual Environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-   
-3. **Install Dependencies**
+ 
+   3. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
