@@ -82,7 +82,7 @@ This repository provides a complete pipeline for building, training, testing, an
      - numpy: For mathematical calculations.
      - matplotlib or others to visualize the data.
    ```bash
-   pip install ccxt pandas numpy
+   pip install ccxt pandas numpy python-dotenv
     ```
 
 3. **Clone the Repository**  
@@ -90,9 +90,15 @@ This repository provides a complete pipeline for building, training, testing, an
    git clone https://github.com/Oxygen-bot/divon.git
    ```
  
-   3. **Configuration**
+3. **Configuration**
+    Specified your key and secret API key.
+    (Mandatory for any trading program)
+    [Example Binance]([https://nodered.org/](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072))
+      
    ```bash
-   pip install -r requirements.txt
+    """key.env"""
+   API_KEY=your_api_key_here
+   API_SECRET=your_api_secret_here
    ```
 
 ### Data Ingestion
