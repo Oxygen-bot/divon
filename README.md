@@ -9,6 +9,8 @@ Divon is an framework for analyzing and trading cryptocurrency markets generatin
 
 #### Dev: `ti1AicEoKpi5e8Jdi2EV43piqAzzFwvH8AC3X9LiuKt`
 
+<img src="./tests/Divon2_2.png" width=700>
+
 ## Overview
 
 This repository provides a complete pipeline for building, training, testing, and deploying AI models to generate actionable cryptocurrency trading signals. By utilizing PyTorch for deep learning, CCXT for market data acquisition, and Tweepy for social media integration, Divon offers a scalable ecosystem for end-to-end AI-powered trading solutions.
