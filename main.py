@@ -3,6 +3,10 @@ import os
 import pandas as pd
 import numpy as np
 import ccxt
+import time
+import smtplib
+import matplotlib.pyplot as plt
+from email.mime.text import MIMEText
 from data.crypto_dataset import CryptoDataset
 from data.data_preprocessor import DataPreprocessor
 from data.feature_engineering import FeatureEngineering
