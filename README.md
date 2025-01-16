@@ -9,7 +9,7 @@ Divon is an framework for analyzing and trading cryptocurrency markets generatin
 
 #### Dev: `ti1AicEoKpi5e8Jdi2EV43piqAzzFwvH8AC3X9LiuKt`
 
- [standard pandas aliases](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases) 
+ -Site Web: [divon.cloud](https://divon.cloud/) 
 
 <img src="./tests/Divon2_2.png" width=100% height=400>
 
