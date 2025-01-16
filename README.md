@@ -94,14 +94,83 @@ This repository provides a complete pipeline for building, training, testing, an
     Specified your key and secret API key.
    
     (Mandatory for any trading program)
-   - [ExampleBinance]([https://nodered.org](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072)/).
-  
-      
+        
    ```bash
-    """key.env"""
+   # key.env
    API_KEY=your_api_key_here
    API_SECRET=your_api_secret_here
    ```
+## **List of Trading Bot Functionalities**
+
+1. Sandbox Mode (Simulation)
+  Use the sandbox mode to run the bot without risking real funds.
+   ```bash
+    """key.env"""
+    exchange.set_sandbox_mode(True)   # Activate simulation mode
+   ```
+   This utilizes a testing environment provided by Binance or other exchanges to simulate trades.
+
+2. Live Trading Mode
+  To use the bot in real trading conditions, deactivate the sandbox mode.
+   ```bash
+    """key.env"""   
+    exchange.set_sandbox_mode(False)  # Deactivate sandbox mode for live trading
+   ```
+  Make sure your API keys are correctly configured and have the appropriate permissions.
+
+3. Backtesting (Testing on Historical Data)
+  Test your strategy on past data to evaluate its performance.
+   ```bash
+    """key.env"""   
+    def backtest(data, sma_short, sma_long, stop_loss_pct, take_profit_pct):
+    # Backtesting logic here (provided earlier)
+
+    # Load historical data
+    df = pd.read_csv("historical_data.csv")
+    
+    # Run backtest
+    backtest(df, sma_short=7, sma_long=25, stop_loss_pct=0.02, take_profit_pct=0.05)
+   ```
+  Result: A graphical analysis of capital evolution and performance statistics.
+
+4. Stop-Loss and Take-Profit Management
+  The bot monitors open positions and applies limits to minimize losses or secure profits.
+  
+  Define percentage limits:
+  ```bash
+  stop_loss_pct = 0.02  # 2% maximum loss
+  take_profit_pct = 0.05  # 5% profit target
+  ```
+
+  Example in the bot:
+   ```bash
+  manage_risk()  # Automatically handles stop-loss and take-profit
+  ```
+
+
+6. Parameter Optimization
+  Find the best combinations of parameters (SMA, stop-loss, take-profit) using a grid search.
+
+ ```bash
+  optimize(
+   data=df,
+   sma_short_range=range(5, 15),
+   sma_long_range=range(20, 50),
+   stop_loss_range=[0.01, 0.02, 0.03],
+   take_profit_range=[0.03, 0.05, 0.07]
+  )
+ ```
+
+
+
+
+
+
+
+
+
+
+
 
 ### Data Ingestion
 By default, the system fetches data from Binance (BTC/USDT, 1-hour intervals). Modify `get_crypto_data` in `src/main.py` to switch to alternative markets or timeframes.
