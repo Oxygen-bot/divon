@@ -25,10 +25,8 @@ from utils.logger import Logger
 from agents.agent_factory import AgentFactory
 from agents.agent_manager import AgentManager
 
-
-# Configuration for API
-api_key = "YOUR_API_KEY"
-api_secret = "YOUR_API_SECRET"
+api_key = "API_KEY"
+api_secret = "API_SECRET"
 
 exchange = ccxt.binance({
     'apiKey': api_key,
