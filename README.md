@@ -105,7 +105,6 @@ This repository provides a complete pipeline for building, training, testing, an
 1. Sandbox Mode (Simulation)
   Use the sandbox mode to run the bot without risking real funds.
    ```bash
-    """key.env"""
     exchange.set_sandbox_mode(True)   # Activate simulation mode
    ```
     This utilizes a testing environment provided by Binance or other exchanges to simulate trades.
@@ -113,7 +112,6 @@ This repository provides a complete pipeline for building, training, testing, an
 2. Live Trading Mode
   To use the bot in real trading conditions, deactivate the sandbox mode.
    ```bash
-    """key.env"""   
     exchange.set_sandbox_mode(False)  # Deactivate sandbox mode for live trading
    ```
     Make sure your API keys are correctly configured and have the appropriate permissions.
@@ -121,7 +119,6 @@ This repository provides a complete pipeline for building, training, testing, an
 3. Backtesting (Testing on Historical Data)
    Test your strategy on past data to evaluate its performance.
    ```bash
-    """key.env"""   
     def backtest(data, sma_short, sma_long, stop_loss_pct, take_profit_pct):
     # Backtesting logic here (provided earlier)
 
