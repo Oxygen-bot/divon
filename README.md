@@ -154,7 +154,9 @@ class TradingEngine:
         print(f"Open Positions: {len(self.positions)}")
         for i, position in enumerate(self.positions):
             print(f"  {i + 1}. Type: {position['type']}, Size: {position['size']}, Entry Price: {position['entry_price']}, Current Price: {position['current_price']}")
+ ```
 
+```bash
 # Example Usage
 if __name__ == "__main__":
     engine = TradingEngine(initial_balance=10000, leverage=10)
