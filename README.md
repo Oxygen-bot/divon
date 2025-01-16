@@ -92,8 +92,9 @@ This repository provides a complete pipeline for building, training, testing, an
  
 3. **Configuration**
     Specified your key and secret API key.
+   
     (Mandatory for any trading program)
-    [Example Binance]([https://nodered.org/](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072))
+    - [Example Binance]([https://nodered.org/](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072))
       
    ```bash
     """key.env"""
