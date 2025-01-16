@@ -7,7 +7,7 @@ Divon is an framework for analyzing and trading cryptocurrency markets generatin
 
 #### CA:  `In_a_few_minutes`
 
-#### Dev: `6u9zAaSnGgTWRXZWAE1hDL2VUidyPrCzs2J3xeHpUjiZ`
+#### Dev: `In_a_few_minutes`
 
  -Website: [divon.cloud](https://divon.cloud/) 
  
